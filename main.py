@@ -2,6 +2,7 @@ import cv2
 
 cap = cv2.VideoCapture('forest.mp4')
 frame_count = 0
+
 while True:
     tr, frame = cap.read()
     frame_ = frame.copy()
@@ -58,4 +59,6 @@ while True:
         cv2.imwrite('frame' + str(frame_count) + '.jpg', frame_)
         cv2.imwrite('marked_frame' + str(frame_count) + '.jpg', frame)
         frame_count += 1
+    if key == 32:
+        
 cv2.destroyAllWindows()
